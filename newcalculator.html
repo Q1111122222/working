@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="lightblue">
+
+    <div style="padding: 20px; font-weight: 600; border: 2px solid rgb(4, 0, 255); border-radius: 20px; color: aqua; background: black;">
+        <h2><u><b><i>CALCULATOR</i></b></u></h2>
+        <label>Enter the numbers : </label> 
+        <input type="number" id="user1" style="padding: 5px; margin-left: 5px; border-radius: 5px; border: none; background: rgb(255, 255, 255);">  
+        <br><br>
+        <label>Signs</label>
+        <select id="sign" style="padding: 5px; margin-left: 5px; border-radius: 5px; border: none; background: rgb(255, 255, 255);">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+        </select> 
+        <br><br>
+        <label>Enter the numbers : </label> 
+        <input type="number" id="user2" style="padding: 5px; margin-left: 5px; border-radius: 5px; border: none; background: rgb(255, 255, 255);">
+        <br><br>
+        <input type="button" value="Answer" id="get_ans" style="padding: 5px; margin-left: 5px; border-radius: 5px; border: none; background: rgb(52, 247, 3); color: rgb(25, 0, 255);  background: rgba(0, 247, 255, 0.774); margin-left: 120px;">
+        <br><br>
+        <input id="answers" style="background: white; border: none; border-radius: 2px; padding: 13px; margin-left: 60px; user-select: none;" readonly />
+    </div>
+
+    <script>
+        document.getElementById("get_ans").addEventListener("click", function() {
+            let first = parseFloat(document.getElementById("user1").value);
+            let second = parseFloat(document.getElementById("user2").value);
+            let symbol = document.getElementById("sign").value;
+            let ans = document.getElementById("answers");
+            let result;
+
+            if (isNaN(first) || isNaN(second)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            switch (symbol) {
+                case '+':
+                    result = first + second;
+                    break;
+                case '-':
+                    result = first - second;
+                    break;
+                case '*':
+                    result = first * second;
+                    break;
+                case '/':
+                    result = first / second;
+                    break;
+                default:
+                    alert("Sorry, an error occurred.");
+                    return;
+            }
+
+            ans.value = result;
+        });
+    </script>
+
+</body>
+</html>

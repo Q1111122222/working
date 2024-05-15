@@ -10,7 +10,7 @@
     
     <script>
         
-        let mark=10
+        let mark=prompt("Enter your marks: ")
 
         if(mark>85){
             document.write("you are in GRADE A")
@@ -18,8 +18,11 @@
         else if(mark>75 && mark<85){
             document.write("you are in GRADE B")
         }
-        else if(mark>50 && mark<70){
+        else if(mark>65 && mark<75){
             document.write("you are in GRADE C")
+        }
+        else if(mark>55 && mark<65){
+            document.write("you are in GRADE D")
         }
         else if(mark<50){
             document.write("you are in GRADE U")
@@ -29,6 +32,19 @@
         }
         
         
+    </script>
+
+<script>
+
+    let po =[10,20,30,40,50];
+    let chif = po.length;
+    let tig = 0;
+
+    for(let mon = 0; mon < chif; mon++) {
+        tig += po[mon];
+    }
+    let man = tig / chif;
+        alert(man);
 </script>
 
 </body>
